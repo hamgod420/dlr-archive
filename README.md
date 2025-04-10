@@ -15,7 +15,10 @@ Make sure you have the directories in the same fashion as above and make sure yo
 
 Now run the commands in the root folder (the folder that contains docker-compose.yml)
 
-```docker compose build
+```
+docker compose build
 
-```docker compose up
+docker compose up
+```
 
+Now you should have a container running locally!
