@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  edrive-dashboard-backend:
+    build:
+      context: ./backend/myapi
+      dockerfile: Dockerfile
+    image: harbor.fa-services.intra.dlr.de/edrive-dashboard/backend
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      labels:
+        - "traefik.enable=true"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.http.routers.edrive-dashboard-backend.entrypoints=websecure"
+        - "traefik.http.routers.edrive-dashboard-backend.rule=Host(`edrive-dashboard-api.nimbus.dlr.de`)"
+        - "traefik.http.routers.edrive-dashboard-backend.tls=true"
+        - "traefik.http.routers.edrive-dashboard-backend.service=edrive-dashboard-backend"
+        - "traefik.http.services.edrive-dashboard-backend.loadbalancer.server.port=8000"
+        - "traefik.docker.network=proxy"
+        - "enable.autoupdate.custom.build=true"
+    #ports:
+    #  - "8000:8000"
+    volumes:
+      - /mnt/ceph_data/filebrowser/users/hass_sm/dyndashboard/myapi:/app
+    networks:
+      - proxy
+      
+
+  edrive-dashboard-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nextjs_frontend
+    image: harbor.fa-services.intra.dlr.de/edrive-dashboard/frontend
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      labels:
+        - "traefik.enable=true"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.http.routers.edrive-dashboard-frontend.entrypoints=websecure"
+        - "traefik.http.routers.edrive-dashboard-frontend.rule=Host(`scale-up-edrive-dashboard.nimbus.dlr.de`)"
+        - "traefik.http.routers.edrive-dashboard-frontend.tls=true"
+        - "traefik.http.routers.edrive-dashboard-frontend.service=edrive-dashboard-frontend"
+        - "traefik.http.services.edrive-dashboard-frontend.loadbalancer.server.port=3000"
+        - "traefik.docker.network=proxy"
+        - "enable.autoupdate.custom.build=true"
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+    #ports:
+    #  - "3000:3000"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true 
