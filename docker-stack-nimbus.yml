@@ -23,8 +23,6 @@ services:
         - "enable.autoupdate.custom.build=true"
     #ports:
     #  - "8000:8000"
-    volumes:
-      - /mnt/ceph_data/filebrowser/users/hass_sm/dyndashboard/myapi:/app
     networks:
       - proxy
       
