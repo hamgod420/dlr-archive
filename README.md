@@ -72,3 +72,4 @@ Now wait 5 min and try either of these options
 -	Open Portainer -> Stacks -> Open your stack -> Editor -> Update the stack -> Make sure to hit “Re-pull image and re-deploy” or
 -	Open Portainer -> Stacks -> Open your stack -> Select all Services  -> Hit “update” -> Make sure to toggle “Re-pull image”
 
+Check out the updated page: https://scale-up-edrive-dashboard.nimbus.dlr.de/
