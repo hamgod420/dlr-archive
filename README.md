@@ -9,7 +9,7 @@ Backend link:
 https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards-backend
 
 
-# Instructions
+# Installation Instructions
 
 This is the main repo that oversees both the frontend and backend, where they're folders that individually point to the main branch of the specific repo.
 
@@ -57,6 +57,12 @@ docker compose down
 ```
 
 # Nimbus Production
+
+Before we continue we need to hardcode urls for our charts, example in [sum-of-stock.tsx](https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards/-/blob/main/app/ui/dashboard/1/sum-of-stock.tsx) replace 
+
+![alt text](image.png)
+
+
 
 In your root folder with the docker files open a new terminal and run these commands:
 
