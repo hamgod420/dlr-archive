@@ -29,6 +29,12 @@ Ensure Docker Desktop is running, run this command to check:
 docker version
 ```
 
+If you are trying the docker container in development we need to create an .env.local in the frontend folder with this variable:
+
+```
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
+
 Now we can build our container:
 
 ```
