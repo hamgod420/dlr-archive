@@ -58,7 +58,7 @@ docker compose down
 
 # Nimbus Production
 
-Before we continue we need to hardcode urls for our charts, example in [sum-of-stock.tsx](https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards/-/blob/main/app/ui/dashboard/1/sum-of-stock.tsx) replace 
+Before we continue we need to hardcode urls for our charts, example in [sum-of-stock.tsx](https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards/-/blob/main/app/ui/dashboard/1/sum-of-stock.tsx) 
 
 ![alt text](image.png)
 
