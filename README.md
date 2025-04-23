@@ -23,6 +23,14 @@ git submodule update --init --recursive
 
 # Docker Instructions
 
+Ensure Docker Desktop is running, run this command to check:
+
+```
+docker version
+```
+
+Now we can build our container:
+
 ```
 docker compose build
 
