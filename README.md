@@ -49,3 +49,24 @@ docker compose up
 ```
 
 Now you should have a container running locally!
+
+# Nimbus Production
+
+In your root folder with the docker files open a terminal and run these commands:
+
+```
+docker login harbor.fa-services.intra.dlr.de
+```
+Enter your username and CLI secret which can be found in your profile in [Harbor](https://harbor.fa-services.intra.dlr.de/)
+
+Now run:
+
+```
+docker compose -f docker-stack-nimbus.yml build
+
+docker compose -f docker-stack-nimbus.yml push
+```
+Now wait 5 min and try either of these options
+-	Open Portainer -> Stacks -> Open your stack -> Editor -> Update the stack -> Make sure to hit “Re-pull image and re-deploy” or
+-	Open Portainer -> Stacks -> Open your stack -> Select all Services  -> Hit “update” -> Make sure to toggle “Re-pull image”
+
