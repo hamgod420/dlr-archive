@@ -78,8 +78,8 @@ docker compose -f docker-stack-nimbus.yml build
 
 docker compose -f docker-stack-nimbus.yml push
 ```
-Now wait 5 min and try either of these options
+Now try either of these options
 -	Open [Portainer](https://portainer.nimbus.dlr.de/#!/home) -> Stacks -> Open your stack -> Editor -> Update the stack -> Make sure to hit “Re-pull image and re-deploy” or
--	Open [Portainer](https://portainer.nimbus.dlr.de/#!/home) -> Stacks -> Open your stack -> Select all Services  -> Hit “update” -> Make sure to toggle “Re-pull image”
+-	(Suggested) Open [Portainer](https://portainer.nimbus.dlr.de/#!/home) -> Stacks -> Open your stack -> Select all Services  -> Hit “update” -> Make sure to toggle “Re-pull image”
 
 Check out the updated page: https://scale-up-edrive-dashboard.nimbus.dlr.de/
