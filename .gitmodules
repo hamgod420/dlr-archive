@@ -1,0 +1,8 @@
+[submodule "backend"]
+	path = backend
+	url = https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards-backend.git
+	branch = main
+[submodule "frontend"]
+	path = frontend
+	url = https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-drive-dashboards.git
+	branch = main
