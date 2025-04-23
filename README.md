@@ -19,7 +19,12 @@ After cloning this repo run these commands:
 cd scale-up-e-drive-dashboards-full-stack-dockerized
 
 git submodule update --init --recursive
+
+git submodule update --remote --merge
+
 ```
+
+
 
 # Docker Instructions
 
