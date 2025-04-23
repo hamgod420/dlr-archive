@@ -52,9 +52,11 @@ Now you should have a container running locally!
 
 # Nimbus Production
 
-In your root folder with the docker files open a terminal and run these commands:
+In your root folder with the docker files open a new terminal and run these commands:
 
 ```
+docker compose down
+
 docker login harbor.fa-services.intra.dlr.de
 ```
 Enter your username and CLI secret which can be found in your profile in [Harbor](https://harbor.fa-services.intra.dlr.de/)
