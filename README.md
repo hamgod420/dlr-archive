@@ -11,9 +11,17 @@ https://gitlab.dlr.de/fk-tbs/collaborative-projects/tbs-web-tools/scale-up-e-dri
 
 # Instructions
 
-Make sure you have the directories in the same fashion as above and make sure you have docker desktop installed.
+This is the main repo that oversees both the frontend and backend, where they're folders that individually point to the main branch of the specific repo.
 
-Now run the commands in the root folder (the folder that contains docker-compose.yml)
+After cloning this repo run these commands:
+
+```
+cd scale-up-e-drive-dashboards-full-stack-dockerized
+
+git submodule update --init --recursive
+```
+
+# Docker Instructions
 
 ```
 docker compose build
